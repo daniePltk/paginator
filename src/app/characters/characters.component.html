@@ -1,0 +1,13 @@
+<div class="characters-main-container">
+  <div class="loader" *ngIf="isLoading"><img src="../../assets/images/blue-dots-loader.gif" height="18" width="18"/>
+  </div>
+  <div class="characters-display-container">
+    <div *ngIf="!isLoading">
+      <div>
+        <app-character [characterModel]="character"></app-character>
+      </div>
+    </div>
+  </div>
+  <app-pagination (changePage)="pageChanged($event)" [currentPage]='page' [isNextPage]='next'
+                  [totalItems]="totalPages"></app-pagination>
+</div>
